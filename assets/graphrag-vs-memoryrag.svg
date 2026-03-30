@@ -1,0 +1,14 @@
+<svg width="1200" height="640" viewBox="0 0 1200 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="640" fill="#FBF9F2"/>
+  <text x="70" y="95" fill="#1F2937" font-size="40" font-family="Arial, sans-serif" font-weight="700">GraphRAG vs MemoryRAG（占位）</text>
+  <rect x="80" y="150" width="480" height="390" rx="24" fill="#F0F5FB" stroke="#7A96B7" stroke-width="2"/>
+  <rect x="640" y="150" width="480" height="390" rx="24" fill="#F2F8F2" stroke="#7FA27E" stroke-width="2"/>
+  <text x="120" y="210" fill="#2F4F73" font-size="30" font-family="Arial, sans-serif" font-weight="700">GraphRAG</text>
+  <text x="120" y="270" fill="#4B5563" font-size="22" font-family="Arial, sans-serif">关注图结构、关系链路、社区摘要</text>
+  <text x="120" y="320" fill="#4B5563" font-size="22" font-family="Arial, sans-serif">适合全局主题与多跳关系建模</text>
+  <text x="120" y="370" fill="#4B5563" font-size="22" font-family="Arial, sans-serif">代价在于构图与维护复杂度较高</text>
+  <text x="680" y="210" fill="#315E3C" font-size="30" font-family="Arial, sans-serif" font-weight="700">MemoryRAG</text>
+  <text x="680" y="270" fill="#4B5563" font-size="22" font-family="Arial, sans-serif">关注记忆单元、关联激活、组织方式</text>
+  <text x="680" y="320" fill="#4B5563" font-size="22" font-family="Arial, sans-serif">适合复杂知识组织与多跳访问</text>
+  <text x="680" y="370" fill="#4B5563" font-size="22" font-family="Arial, sans-serif">代价在于记忆更新与评估更复杂</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg width="1200" height="640" viewBox="0 0 1200 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="640" fill="#F7F4EC"/>
+  <rect x="60" y="60" width="1080" height="520" rx="28" fill="#FFFDF8" stroke="#D8D0BD" stroke-width="2"/>
+  <text x="90" y="130" fill="#1F2937" font-size="42" font-family="Arial, sans-serif" font-weight="700">RAG 总体流程图（占位）</text>
+  <text x="90" y="180" fill="#4B5563" font-size="22" font-family="Arial, sans-serif">Document → Chunking → Embedding → Retrieval → Reranking → Generation</text>
+  <rect x="90" y="250" width="150" height="88" rx="16" fill="#E7F0E4" stroke="#8AA17D"/>
+  <rect x="270" y="250" width="150" height="88" rx="16" fill="#EAF1F8" stroke="#7994B5"/>
+  <rect x="450" y="250" width="150" height="88" rx="16" fill="#F8EEDB" stroke="#BE9B57"/>
+  <rect x="630" y="250" width="150" height="88" rx="16" fill="#F8E4E4" stroke="#B97979"/>
+  <rect x="810" y="250" width="150" height="88" rx="16" fill="#ECE7F7" stroke="#8E7FB8"/>
+  <rect x="990" y="250" width="120" height="88" rx="16" fill="#E6F4F1" stroke="#679D92"/>
+  <text x="126" y="302" fill="#243B2F" font-size="22" font-family="Arial, sans-serif">文档</text>
+  <text x="294" y="302" fill="#29435C" font-size="22" font-family="Arial, sans-serif">切块</text>
+  <text x="472" y="302" fill="#5C4823" font-size="22" font-family="Arial, sans-serif">向量化</text>
+  <text x="653" y="302" fill="#5C2323" font-size="22" font-family="Arial, sans-serif">检索</text>
+  <text x="832" y="302" fill="#3D2C63" font-size="22" font-family="Arial, sans-serif">重排</text>
+  <text x="1016" y="302" fill="#1F4C46" font-size="22" font-family="Arial, sans-serif">生成</text>
+  <text x="90" y="430" fill="#6B7280" font-size="24" font-family="Arial, sans-serif">后续可替换为正式流程图，展示基础 RAG 的最小闭环与各模块职责。</text>
+</svg>

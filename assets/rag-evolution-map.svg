@@ -1,0 +1,20 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#F4F8FB"/>
+  <text x="70" y="95" fill="#1F2937" font-size="42" font-family="Arial, sans-serif" font-weight="700">RAG 演进路线图（占位）</text>
+  <text x="70" y="145" fill="#4B5563" font-size="22" font-family="Arial, sans-serif">从向量检索到结构化知识组织，再到记忆、推理与认知式融合</text>
+  <circle cx="120" cy="340" r="18" fill="#4E7B6B"/>
+  <circle cx="330" cy="340" r="18" fill="#5E88B5"/>
+  <circle cx="540" cy="340" r="18" fill="#A07C52"/>
+  <circle cx="750" cy="340" r="18" fill="#9273B6"/>
+  <circle cx="960" cy="340" r="18" fill="#B56E7D"/>
+  <line x1="138" y1="340" x2="312" y2="340" stroke="#9CA3AF" stroke-width="4"/>
+  <line x1="348" y1="340" x2="522" y2="340" stroke="#9CA3AF" stroke-width="4"/>
+  <line x1="558" y1="340" x2="732" y2="340" stroke="#9CA3AF" stroke-width="4"/>
+  <line x1="768" y1="340" x2="942" y2="340" stroke="#9CA3AF" stroke-width="4"/>
+  <text x="70" y="405" fill="#2F4F45" font-size="24" font-family="Arial, sans-serif">基础 RAG</text>
+  <text x="250" y="405" fill="#305077" font-size="24" font-family="Arial, sans-serif">GraphRAG</text>
+  <text x="430" y="405" fill="#6D5535" font-size="24" font-family="Arial, sans-serif">Light GraphRAG</text>
+  <text x="682" y="405" fill="#5D4680" font-size="24" font-family="Arial, sans-serif">Memory / Thinking RAG</text>
+  <text x="900" y="405" fill="#7B3E4D" font-size="24" font-family="Arial, sans-serif">CognitiveRAG</text>
+  <text x="70" y="540" fill="#6B7280" font-size="24" font-family="Arial, sans-serif">后续可替换为正式方法谱系图，加入代表性论文、问题主线与设计空间。</text>
+</svg>

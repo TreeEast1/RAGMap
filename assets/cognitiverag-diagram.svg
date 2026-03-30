@@ -1,0 +1,17 @@
+<svg width="1200" height="680" viewBox="0 0 1200 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="680" fill="#F7F3F8"/>
+  <text x="70" y="90" fill="#1F2937" font-size="42" font-family="Arial, sans-serif" font-weight="700">CognitiveRAG 方法示意图（占位）</text>
+  <circle cx="230" cy="350" r="84" fill="#EDE4F7" stroke="#8D76B0" stroke-width="2"/>
+  <circle cx="500" cy="220" r="84" fill="#E3F1F6" stroke="#6C98A8" stroke-width="2"/>
+  <circle cx="500" cy="480" r="84" fill="#E7F3E6" stroke="#7FA07E" stroke-width="2"/>
+  <circle cx="830" cy="350" r="96" fill="#F8E7E7" stroke="#B67D7D" stroke-width="2"/>
+  <text x="186" y="357" fill="#4B3A64" font-size="26" font-family="Arial, sans-serif">理解</text>
+  <text x="456" y="227" fill="#335C68" font-size="26" font-family="Arial, sans-serif">记忆组织</text>
+  <text x="458" y="487" fill="#3D5D3C" font-size="26" font-family="Arial, sans-serif">全局扩散</text>
+  <text x="768" y="357" fill="#6A3941" font-size="26" font-family="Arial, sans-serif">认知式重排</text>
+  <line x1="304" y1="320" x2="416" y2="248" stroke="#9CA3AF" stroke-width="4"/>
+  <line x1="304" y1="380" x2="416" y2="452" stroke="#9CA3AF" stroke-width="4"/>
+  <line x1="584" y1="220" x2="734" y2="317" stroke="#9CA3AF" stroke-width="4"/>
+  <line x1="584" y1="480" x2="734" y2="383" stroke="#9CA3AF" stroke-width="4"/>
+  <text x="70" y="610" fill="#6B7280" font-size="24" font-family="Arial, sans-serif">后续可扩展为正式框架图，展示输入知识如何转化为认知单元并参与复杂问答。</text>
+</svg>
