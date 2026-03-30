@@ -1,258 +1,243 @@
 # RAGMap
 
-> 一个面向中文读者的 RAG 学习与研究导航仓库。  
-> 它关注的不是“收集了多少论文”，而是“RAG 为什么会这样演化，它下一步可能走向哪里”。
+> 一个单页版的 RAG 演进地图。  
+> 重点不是堆论文，而是回答 3 个问题：RAG 为什么会演化、每一代方法在解决什么、下一步还能往哪里走。
 
-## 项目简介
+![RAG 演进路线图](./assets/rag-evolution-map.svg)
 
-`RAGMap` 试图把 Retrieval-Augmented Generation（RAG）梳理成一张可学习、可研究、可持续维护的方法地图。
+## 这个仓库要做什么
 
-这个仓库不把 RAG 看成单一技术点，而把它看成一个持续演化的系统问题：
+`RAGMap` 想做成一个适合 GitHub 首页直接阅读的中文知识仓库：
 
-- 从基础向量检索，到图结构增强；
-- 从图式知识组织，到 memory-centric / cognitive 风格方法；
-- 从“检索更多”走向“组织更好、推理更稳、规划更强”；
-- 从单轮问答工具，走向复杂任务中的知识基础设施。
+- 对初学者：快速建立从基础 RAG 到 GraphRAG / MemoryRAG / Thinking RAG 的整体认知
+- 对研究者：把代表性方法放回演进链条，而不是只看论文名和指标
+- 对开发者：帮助判断不同方法分别适合什么场景、带来什么成本
 
-如果你想知道“某个方法是什么”，这里会给你入口；  
-如果你更关心“它为什么出现、解决了什么、代价是什么、下一步还缺什么”，这里会尽量给你方法脉络。
+当前版本刻意压成 **单页 README**，避免仓库里散落太多 Markdown 文件。
 
-## 为什么做这个项目
+## 适合谁看
 
-现有很多 RAG 资料存在几个常见问题：
+### 初学者
 
-- 论文罗列很多，但方法演进逻辑不清晰；
-- 初学者能看到概念，却很难形成完整系统图；
-- 研究者能看到局部创新，却不容易把它放回长期演化脉络；
-- 不同社区对 GraphRAG、MemoryRAG、Reasoning RAG、CognitiveRAG 的讨论相互割裂。
+你会更关心：
 
-`RAGMap` 希望解决的是“认知地图”问题：
+- 什么是 RAG
+- 标准向量化 RAG 是怎么工作的
+- 为什么基础 RAG 很快就不够用
+- GraphRAG、HippoRAG、Thinking RAG 到底是在补哪里
 
-- 帮初学者建立从 0 到 1 的理解框架；
-- 帮研究者快速定位每一代方法在解决什么问题；
-- 帮开发者理解工程取舍，而不是只看论文指标；
-- 帮后续维护者持续扩展，而不是把仓库做成一次性笔记。
+### 研究者 / 开发者
 
-## 适合谁阅读
+你会更关心：
 
-### 1. RAG 初学者 / 小白
+- 方法演进是否有清晰主线
+- 基础 RAG、GraphRAG、LightRAG、HippoRAG、HippoRAG2、Think-on-RAG、ComoRAG、CogitoRAG 的设计差异
+- 哪些方法在解决“结构组织”，哪些在解决“记忆组织”，哪些在解决“检索与推理协同”
 
-如果你想回答下面这些问题，这个仓库适合你：
-
-- 什么是 RAG，它和“直接让 LLM 回答”有什么不同？
-- 标准向量化 RAG 是怎么工作的？
-- 为什么会出现 chunking、embedding、retrieval、reranking？
-- 为什么基础 RAG 很快就遇到瓶颈？
-- 我应该按什么顺序学习，才不会一上来就被 GraphRAG 和复杂框架劝退？
-
-### 2. RAG 研究者 / 开发者
-
-如果你更关心以下问题，这个仓库同样适合你：
-
-- RAG 的方法演进是否存在清晰主线？
-- 基础 RAG、GraphRAG、LightRAG、HippoRAG、Thinking-oriented RAG 的设计差异是什么？
-- 哪些方法在解决“召回问题”，哪些方法在解决“组织问题”，哪些方法在解决“推理问题”？
-- CognitiveRAG 这类方法在整个谱系中处于什么位置？
-- 未来的机会点更可能出现在 memory、planning、reasoning 还是 structured retrieval？
-
-## RAG 演进路线总览
-
-可以把近几年的 RAG 粗略看成下面几条连续演进线：
+## 一张图看 RAG 演进
 
 ```text
-基础向量化 RAG
-  -> 发现局部语义匹配不够，难以处理全局关系与复杂问答
+基础 RAG
+  -> 问题：召回局部片段，但全局关系、多跳推理、证据组织不足
+
 GraphRAG
-  -> 用图结构组织知识，提升全局视角、多跳关联与社区摘要能力
-轻量化 GraphRAG
-  -> 保留结构化优势，同时压低构图和维护成本
-Memory / Cognitive 风格 RAG
-  -> 从“检索文档片段”转向“组织记忆单元与关联网络”
-Reasoning-enhanced / Thinking-oriented RAG
-  -> 从“找到相关内容”转向“动态拆解问题并规划检索路径”
-CognitiveRAG
-  -> 试图把理解、记忆、扩散、重排放进统一认知式知识流程
-下一阶段
-  -> retrieval + memory + reasoning + planning 的更深融合
+  -> 思路：把知识组织成图，增强关系感知与全局摘要
+
+LightRAG
+  -> 思路：保留结构化收益，同时降低完整图系统的成本
+
+HippoRAG / HippoRAG2
+  -> 思路：从“检索片段”转向“记忆组织与关联访问”
+
+Think-on-RAG
+  -> 思路：从一次检索转向查询分解、动态路径与检索-推理协同
+
+ComoRAG / CogitoRAG
+  -> 思路：更进一步强调认知式记忆、全局语义扩散、复杂语义场景中的知识重排
 ```
 
-## 方法演进时间线
+## 基础 RAG：起点，也是后续一切增强的基座
 
-> 这里给的是研究主线导航，不是严格年份断代。
-
-| 阶段 | 核心代表 | 主要关注 | 关键收益 | 主要代价 |
-| --- | --- | --- | --- | --- |
-| 基础 RAG | 向量检索 + 重排 + 生成 | 先把相关上下文找回来 | 工程简单、落地快 | 上下文碎片化、全局关系弱 |
-| GraphRAG | Microsoft GraphRAG | 把知识组织成图与社区摘要 | 多跳、主题级理解更强 | 构图、抽取、维护成本高 |
-| 轻量化 GraphRAG | LightRAG 等 | 用更轻的结构化方案逼近图优势 | 效率更高、部署更轻 | 表达能力常弱于重图方案 |
-| Memory RAG | HippoRAG、HippoRAG2 | 把知识从“片段库”升级为“记忆系统” | 更适合复杂关联检索 | 记忆构造与更新机制更复杂 |
-| Thinking RAG | Think-on-RAG 等 | 检索与推理过程协同设计 | 复杂问题路径更清晰 | 延迟和推理开销更高 |
-| CognitiveRAG | CognitiveRAG | 统一理解、记忆组织、全局扩散、认知重排 | 面向复杂语义与多跳任务 | 体系复杂，评估与工程化难度上升 |
-
-## 每一代方法到底在解决什么问题
-
-| 方法代际 | 为什么会出现 | 主要解决的问题 | 没有完全解决的问题 |
-| --- | --- | --- | --- |
-| 基础 RAG | LLM 参数知识有限、知识更新慢 | 外部知识接入、事实增强 | 全局关系、复杂推理、证据稳定性 |
-| GraphRAG | 纯向量匹配对结构关系感知不足 | 全局组织、多跳链路、社区级摘要 | 图构建成本、动态更新难 |
-| 轻量化 GraphRAG | 重图方案过重，难以普及 | 降低结构化检索门槛 | 复杂关系表达可能不够深 |
-| Memory RAG | “找到片段”不等于“拥有记忆” | 知识组织、长期关联、可扩展记忆 | 如何稳定更新、遗忘与压缩 |
-| Thinking RAG | 单次检索对复杂问题路径支持不够 | 查询分解、动态检索、过程性推理 | 推理成本、链路可控性 |
-| CognitiveRAG | 检索、记忆、重排仍然割裂 | 认知式知识转换与多维组织 | 统一范式仍在探索阶段 |
-
-## 方法对比导航
-
-| 方法 | 核心单位 | 优势场景 | 典型局限 | 文档入口 |
-| --- | --- | --- | --- | --- |
-| 基础 RAG | 文本 chunk | FAQ、知识库问答、快速搭建 | 对复杂关系支持弱 | [docs/02-basic-rag.md](./docs/02-basic-rag.md) |
-| GraphRAG | 实体/关系/社区 | 需要全局视角与多跳理解 | 预处理重、链路复杂 | [docs/04-graphrag.md](./docs/04-graphrag.md) |
-| LightRAG | 轻量结构单元 | 想要结构化收益但资源有限 | 深层关系表达有限 | [docs/05-lightweight-graphrag.md](./docs/05-lightweight-graphrag.md) |
-| HippoRAG | 记忆图谱 / 记忆网络 | 多跳问答、知识组织 | 记忆更新机制复杂 | [docs/06-memory-rag.md](./docs/06-memory-rag.md) |
-| HippoRAG2 | 增强型记忆组织 | 更复杂推理与知识聚合 | 系统复杂度继续上升 | [docs/06-memory-rag.md](./docs/06-memory-rag.md) |
-| Thinking-on-RAG | 检索路径 + 推理链 | 复杂问题拆解与逐步求解 | 成本更高、稳定性依赖设计 | [docs/07-thinking-rag.md](./docs/07-thinking-rag.md) |
-| CognitiveRAG | 认知式知识单元 | 复杂语义、多维组织、全局扩散 | 仍需更多标准化验证 | [docs/08-cognitiverag.md](./docs/08-cognitiverag.md) |
-
-## 学习路径推荐
-
-### 路线 A：初学者
-
-建议按下面顺序阅读：
-
-1. [什么是 RAG](./docs/01-what-is-rag.md)
-2. [基础 RAG](./docs/02-basic-rag.md)
-3. [为什么基础 RAG 不够](./docs/03-why-basic-rag-is-not-enough.md)
-4. [GraphRAG](./docs/04-graphrag.md)
-5. [阅读路线图](./docs/10-reading-roadmap.md)
-
-这条路线的目标不是追热点，而是先建立一个稳定的基础框架：
-
-- 先理解 RAG 的最小闭环；
-- 再理解基础方案为什么不够；
-- 最后再看图、记忆、推理这些增强方向。
-
-### 路线 B：研究者 / 开发者
-
-建议按下面顺序阅读：
-
-1. [为什么基础 RAG 不够](./docs/03-why-basic-rag-is-not-enough.md)
-2. [GraphRAG](./docs/04-graphrag.md)
-3. [轻量化 GraphRAG](./docs/05-lightweight-graphrag.md)
-4. [Memory RAG](./docs/06-memory-rag.md)
-5. [Thinking-oriented RAG](./docs/07-thinking-rag.md)
-6. [CognitiveRAG](./docs/08-cognitiverag.md)
-7. [RAG 的未来](./docs/09-future-of-rag.md)
-
-这条路线更强调：
-
-- 方法出现的因果关系；
-- 架构设计的真实取舍；
-- 下一阶段潜在研究切口。
-
-## 项目结构
+最常见的基础 RAG 流程是：
 
 ```text
-RAGMap/
-├── README.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── ROADMAP.md
-├── references.md
-├── glossary.md
-├── faq.md
-├── assets/
-│   └── README.md
-└── docs/
-    ├── 01-what-is-rag.md
-    ├── 02-basic-rag.md
-    ├── 03-why-basic-rag-is-not-enough.md
-    ├── 04-graphrag.md
-    ├── 05-lightweight-graphrag.md
-    ├── 06-memory-rag.md
-    ├── 07-thinking-rag.md
-    ├── 08-cognitiverag.md
-    ├── 09-future-of-rag.md
-    └── 10-reading-roadmap.md
+文档 -> chunking -> embedding -> retrieval -> reranking -> generation
 ```
 
-## 文档入口
+它的价值很明确：
 
-- [什么是 RAG](./docs/01-what-is-rag.md)
-- [基础 RAG：从 chunk 到 generation](./docs/02-basic-rag.md)
-- [为什么基础 RAG 不够](./docs/03-why-basic-rag-is-not-enough.md)
-- [GraphRAG：从向量检索到图结构组织](./docs/04-graphrag.md)
-- [轻量化 GraphRAG：效率与复杂度折中](./docs/05-lightweight-graphrag.md)
-- [Memory / Cognitive 风格 RAG](./docs/06-memory-rag.md)
-- [Reasoning-enhanced / Thinking-oriented RAG](./docs/07-thinking-rag.md)
-- [CognitiveRAG：在演化脉络中的位置](./docs/08-cognitiverag.md)
-- [RAG 的未来方向](./docs/09-future-of-rag.md)
-- [阅读路线图](./docs/10-reading-roadmap.md)
+- 工程上简单，容易搭建
+- 对 FAQ、知识库问答、文档助手类任务很有效
+- 能让 LLM 接入外部知识，而不是只依赖参数记忆
 
-## 常见研究创新切入点
+但它很快会暴露几个典型问题：
 
-如果你在找“还能往哪里做”，可以优先关注这些方向：
+- 召回不足：相似度高不代表真正有用
+- 上下文碎片化：chunk 会打断原始知识结构
+- 多跳推理弱：复杂问题往往不是一次 top-k 检索能解决
+- 全局关系感知弱：主题级、社区级问题处理不好
+- 幻觉与证据融合不稳：检索到证据不等于模型会正确使用
 
-- 检索单元设计：chunk、entity、subgraph、memory node 是否应该统一？
-- 检索目标函数：召回相关内容，还是召回最有用的推理支撑？
-- 查询建模：用户问题能否先被分解、重写、扩展或规划？
-- 知识组织：知识应该按文本、关系、事件、语义场、记忆层次来组织？
-- 检索后重排：reranking 是否应该引入全局结构与任务意图？
-- 证据融合：多来源证据如何去冗余、消冲突、保溯源？
-- 长期记忆更新：新增知识如何写入、压缩、遗忘与重建？
-- 全局与局部协同：文档局部细节与跨文档全局关系如何共同参与生成？
-- 评测体系：复杂 RAG 是否需要超越 EM/F1/Recall 的新指标？
+这正是后续各类增强型 RAG 出现的原因。
 
-## 未来可视化占位
+## 方法对比总表
 
-后续可以在 `assets/` 中补充图示，README 已预留展示位：
+| 方法 | 核心问题意识 | 主要机制 | 更适合什么任务 | 主要代价 |
+| --- | --- | --- | --- | --- |
+| 基础 RAG | 先把相关内容找回来 | chunk + vector retrieval + rerank | FAQ、企业知识库、快速落地 | 结构弱、多跳弱 |
+| GraphRAG | 局部相似不等于全局理解 | 图构建、社区摘要、局部/全局搜索 | 多文档综合问答、主题级总结 | 构图和维护成本高 |
+| LightRAG | 完整图系统太重 | 轻量图式结构与简化检索 | 想要结构化收益但资源有限 | 表达能力可能弱于重图 |
+| HippoRAG | 检索不是记忆 | 记忆图谱 + 关联传播 | 多跳问答、长期知识组织 | 记忆构建与更新复杂 |
+| HippoRAG2 | 结构化记忆不能牺牲基础事实召回 | 更深 passage integration + 在线 LLM 使用 | 同时兼顾 factual / associative / sense-making | 系统复杂度继续升高 |
+| Think-on-RAG | 单次检索不够支持复杂路径 | 查询分解、迭代检索、检索-推理协同 | 复杂推理、多步问答 | 时延和控制复杂度高 |
+| ComoRAG | 长叙事理解需要 stateful memory | 动态 memory workspace + reasoning cycle | 长文本叙事、多轮状态推理 | 流程复杂、计算开销更高 |
+| CogitoRAG | 仅做结构检索仍会丢失语义整体性 | semantic gist + semantic diffusion + CogniRank | 复杂语义、多跳、全局语义场景 | 中间表示和评估更复杂 |
 
-- `assets/rag-overview.svg`：RAG 总体流程图
-- `assets/rag-evolution-map.svg`：RAG 演进路线图
-- `assets/graphrag-vs-memoryrag.svg`：GraphRAG 与 MemoryRAG 对比图
-- `assets/cognitiverag-diagram.svg`：CognitiveRAG 方法示意图
+## 每一代方法到底在解决什么
 
-示意占位如下：
+| 代际 | 为什么会出现 | 它补的核心短板 | 它没有彻底解决的事 |
+| --- | --- | --- | --- |
+| 基础 RAG | LLM 参数知识有限，且会过时 | 外部知识接入 | 全局关系、复杂推理 |
+| GraphRAG | 纯向量匹配对结构关系感知不足 | 图结构、社区级摘要、全局理解 | 图构建太重，更新困难 |
+| LightRAG | GraphRAG 过重，难以普及 | 轻量化结构组织 | 深层关系表达有限 |
+| HippoRAG | 知识不应只是 chunk 集合 | 记忆组织、关联访问 | 在线更新、遗忘、压缩 |
+| HippoRAG2 | 记忆型方法不能只擅长复杂问题 | 同时兼顾 factual 与 associative memory | 统一评估与工程化边界 |
+| Think-on-RAG | 复杂问题需要路径，不只是证据 | 查询分解、动态检索路径 | 推理控制稳定性 |
+| ComoRAG / CogitoRAG | 检索、记忆、理解仍割裂 | 更认知化的知识组织和扩散 | 标准化、复杂度、评测体系 |
 
-![RAG 总体流程图占位](./assets/rag-overview.svg)
-![RAG 演进路线图占位](./assets/rag-evolution-map.svg)
+## 重点论文导航
 
-> 当前仓库已提供简易占位图，后续补正式图片时可直接覆盖以上路径。
+下面这几篇是这版仓库重点保留的主线论文。链接优先给原文 `arXiv abs/pdf`。
 
-## 后续维护说明
+### 1. GraphRAG
 
-这个仓库设计成“知识仓库”而不是“一次性文章”：
+- 论文：*From Local to Global: A Graph RAG Approach to Query-Focused Summarization*
+- arXiv Abstract: [2404.16130](https://arxiv.org/abs/2404.16130)
+- PDF: [arXiv PDF](https://arxiv.org/pdf/2404.16130)
+定位：
 
-- `README.md` 负责总览与导航；
-- `docs/` 负责章节化展开；
-- `references.md` 负责论文、项目、博客等参考线索；
-- `ROADMAP.md` 负责后续维护优先级；
-- 后续可逐步扩展为 GitHub Pages，但第一阶段先保证内容结构足够稳固。
+- 这是 Microsoft GraphRAG 最具代表性的起点论文之一
+- 核心贡献不是“把检索换成图”这么简单，而是把 RAG 从局部匹配推进到全局主题理解和社区摘要
 
-维护时建议优先遵守三条原则：
+### 2. LightRAG
 
-1. 新内容必须说明它解决了什么问题。
-2. 新方法必须放回演进脉络，而不是孤立介绍。
-3. 新增资料优先增强导航价值，而不是单纯增加数量。
+- 论文：*LightRAG: Simple and Fast Retrieval-Augmented Generation*
+- arXiv Abstract: [2410.05779](https://arxiv.org/abs/2410.05779)
+- PDF: [arXiv PDF](https://arxiv.org/pdf/2410.05779)
+定位：
 
-## 欢迎贡献
+- 它代表“轻量化结构化 RAG”方向
+- 重点不是复刻完整 GraphRAG，而是在效率、复杂度、效果之间做工程化折中
 
-欢迎以下类型的贡献：
+### 3. HippoRAG
 
-- 修正文档中的事实错误或表达不清之处
-- 增加代表性方法与对比分析
-- 补充更好的图示、表格与阅读路线
-- 补充高质量 benchmark、开源实现与工程经验
-- 帮助把某一章节写得更适合新人理解
+- 论文：*HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models*
+- arXiv Abstract: [2405.14831](https://arxiv.org/abs/2405.14831)
+- PDF: [arXiv PDF](https://arxiv.org/pdf/2405.14831)
+定位：
 
-贡献方式见 [CONTRIBUTING.md](./CONTRIBUTING.md)。
+- 它是“从 RAG 走向 memory”的代表方法
+- 重要之处在于提出：知识组织不该只靠向量相似度，还应该更像长期记忆系统
 
-## License 建议
+### 4. HippoRAG 2
 
-本项目当前采用 [CC BY 4.0](./LICENSE)。
+- 论文：*From RAG to Memory: Non-Parametric Continual Learning for Large Language Models*
+- arXiv Abstract: [2502.14802](https://arxiv.org/abs/2502.14802)
+- PDF: [arXiv PDF](https://arxiv.org/pdf/2502.14802)
+定位：
 
-原因很直接：
+- 它不是简单续作，而是在回应一个关键问题：
+- 结构化 / 记忆型 RAG 不能只在复杂关联任务上强，也必须兼顾基础 factual memory
 
-- 仓库主体是知识整理与文档写作；
-- 允许他人转载、改编、再组织；
-- 只要求保留署名，适合研究导航类开源项目传播。
+### 5. Think-on-RAG
 
-如果未来仓库中增加较多可执行代码，可考虑将代码子目录改为 MIT，文档继续保留 CC BY 4.0。
+这里我用一篇最接近你这个脉络的代表作来承接“thinking-oriented RAG”：
+
+- 论文：*Think-on-Graph 2.0: Deep and Faithful Large Language Model Reasoning with Knowledge-guided Retrieval Augmented Generation*
+- arXiv Abstract: [2407.10805](https://arxiv.org/abs/2407.10805)
+- PDF: [arXiv PDF](https://arxiv.org/pdf/2407.10805)
+为什么这样放：
+
+- 我没有查到标题就叫 “Think-on-RAG” 的那篇标准代表论文
+- 但 `Think-on-Graph 2.0` 很适合作为 “thinking-oriented / reasoning-enhanced RAG” 的代表入口，因为它强调的正是查询路径、检索-推理协同和深层线索搜集
+
+### 6. ComoRAG
+
+- 论文：*ComoRAG: A Cognitive-Inspired Memory-Organized RAG for Stateful Long Narrative Reasoning*
+- arXiv Abstract: [2508.10419](https://arxiv.org/abs/2508.10419)
+- PDF: [arXiv PDF](https://arxiv.org/pdf/2508.10419)
+定位：
+
+- 这是“认知启发 + memory-organized RAG”的一个很强代表
+- 特别适合长叙事、长文本、stateful reasoning 这类不是一次检索就能解决的问题
+
+### 7. 认知式 RAG / CogitoRAG
+
+你给出的链接对应的是这篇：
+
+- 论文：*Understand Then Memory: A Cognitive Gist-Driven RAG Framework with Global Semantic Diffusion*
+- arXiv Abstract: [2602.15895](https://arxiv.org/abs/2602.15895)
+- PDF: [arXiv PDF](https://arxiv.org/pdf/2602.15895)
+- DOI: [10.48550/arXiv.2602.15895](https://doi.org/10.48550/arXiv.2602.15895)
+
+命名说明：
+
+- 这篇论文的标题不是 “CognitiveRAG”
+- 论文摘要里提出的框架名是 **CogitoRAG**
+- 但它确实非常适合放在“认知式 RAG / cognitive-style RAG”这条主线上理解
+
+定位：
+
+- 它试图解决“离散文本表示导致语义整体性丢失”的问题
+- 关键关键词包括：`Semantic Gist`、`Query Decomposition`、`Entity Diffusion`、`CogniRank`
+
+## 一条更清晰的阅读顺序
+
+如果你只想用一个 README 读完整条脉络，建议按这个顺序往下看：
+
+1. 先理解基础 RAG 的标准流程与局限
+2. 再看 GraphRAG 为什么要引入图结构
+3. 然后看 LightRAG 如何做复杂度折中
+4. 再看 HippoRAG / HippoRAG2 如何把问题推进到 memory
+5. 接着看 Think-on-RAG 如何把 retrieval 和 reasoning 绑在一起
+6. 最后看 ComoRAG / CogitoRAG 如何把问题进一步推进到认知式记忆与语义扩散
+
+## 这条演化链最重要的观察
+
+我认为 RAG 的核心变化可以概括成一句话：
+
+> 它正在从“把相关 chunk 找回来”演化为“把知识组织、访问、扩散、重排，并服务于复杂推理”。
+
+换句话说，RAG 的竞争点会越来越不是：
+
+- 谁检索更像搜索引擎
+
+而是：
+
+- 谁的知识组织更强
+- 谁的全局关系建模更好
+- 谁能把 memory、reasoning、planning 和 retrieval 接起来
+
+## 仓库后续怎么扩
+
+当前仓库先故意保持轻量，只保留：
+
+- 一个 `README.md`
+- 一个 `LICENSE`
+- 若干占位图 `assets/*.svg`
+
+如果后续扩展，我建议按这个顺序：
+
+1. 先继续补 README 里的论文导航和方法比较
+2. 再补一张真正可发表级别的 RAG 演进路线图
+3. 最后如果内容足够多，再拆分成 `docs/`
+
+## License
+
+当前采用 [CC BY 4.0](./LICENSE)。
+
+适合这个项目的原因很简单：
+
+- 这是文档型知识仓库
+- 允许转载、整理、再创作
+- 只要求保留署名
