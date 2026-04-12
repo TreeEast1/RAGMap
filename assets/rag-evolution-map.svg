@@ -1,20 +1,54 @@
-<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="700" fill="#F4F8FB"/>
-  <text x="70" y="95" fill="#1F2937" font-size="42" font-family="Arial, sans-serif" font-weight="700">RAG 演进路线图（占位）</text>
-  <text x="70" y="145" fill="#4B5563" font-size="22" font-family="Arial, sans-serif">从向量检索到结构化知识组织，再到记忆、推理与认知式融合</text>
-  <circle cx="120" cy="340" r="18" fill="#4E7B6B"/>
-  <circle cx="330" cy="340" r="18" fill="#5E88B5"/>
-  <circle cx="540" cy="340" r="18" fill="#A07C52"/>
-  <circle cx="750" cy="340" r="18" fill="#9273B6"/>
-  <circle cx="960" cy="340" r="18" fill="#B56E7D"/>
-  <line x1="138" y1="340" x2="312" y2="340" stroke="#9CA3AF" stroke-width="4"/>
-  <line x1="348" y1="340" x2="522" y2="340" stroke="#9CA3AF" stroke-width="4"/>
-  <line x1="558" y1="340" x2="732" y2="340" stroke="#9CA3AF" stroke-width="4"/>
-  <line x1="768" y1="340" x2="942" y2="340" stroke="#9CA3AF" stroke-width="4"/>
-  <text x="70" y="405" fill="#2F4F45" font-size="24" font-family="Arial, sans-serif">基础 RAG</text>
-  <text x="250" y="405" fill="#305077" font-size="24" font-family="Arial, sans-serif">GraphRAG</text>
-  <text x="430" y="405" fill="#6D5535" font-size="24" font-family="Arial, sans-serif">Light GraphRAG</text>
-  <text x="682" y="405" fill="#5D4680" font-size="24" font-family="Arial, sans-serif">Memory / Thinking RAG</text>
-  <text x="900" y="405" fill="#7B3E4D" font-size="24" font-family="Arial, sans-serif">CognitiveRAG</text>
-  <text x="70" y="540" fill="#6B7280" font-size="24" font-family="Arial, sans-serif">后续可替换为正式方法谱系图，加入代表性论文、问题主线与设计空间。</text>
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#F5F7F4"/>
+  <rect x="44" y="40" width="1112" height="680" rx="28" fill="#FCFDFB" stroke="#D5DDD4" stroke-width="2"/>
+
+  <text x="78" y="98" fill="#1C2B22" font-size="40" font-family="Arial, sans-serif" font-weight="700">RAGMap 技术发展树</text>
+  <text x="78" y="136" fill="#53635A" font-size="21" font-family="Arial, sans-serif">从单一路径的 RAG 流水线，走向多分支能力组合与自动选路</text>
+
+  <rect x="470" y="176" width="260" height="92" rx="20" fill="#E6EFE7" stroke="#78907C" stroke-width="2"/>
+  <text x="548" y="214" fill="#23352A" font-size="26" font-family="Arial, sans-serif" font-weight="700">RAGMap</text>
+  <text x="500" y="244" fill="#476053" font-size="18" font-family="Arial, sans-serif">Knowledge Routing for RAG</text>
+
+  <line x1="600" y1="268" x2="600" y2="328" stroke="#93A497" stroke-width="4"/>
+  <line x1="600" y1="328" x2="235" y2="392" stroke="#93A497" stroke-width="4"/>
+  <line x1="600" y1="328" x2="485" y2="392" stroke="#93A497" stroke-width="4"/>
+  <line x1="600" y1="328" x2="735" y2="392" stroke="#93A497" stroke-width="4"/>
+  <line x1="600" y1="328" x2="965" y2="392" stroke="#93A497" stroke-width="4"/>
+
+  <rect x="90" y="392" width="290" height="210" rx="22" fill="#EEF6F1" stroke="#7DA18B" stroke-width="2"/>
+  <text x="122" y="438" fill="#244333" font-size="28" font-family="Arial, sans-serif" font-weight="700">向量检索分支</text>
+  <text x="122" y="474" fill="#406150" font-size="18" font-family="Arial, sans-serif">Vector-first retrieval</text>
+  <text x="122" y="518" fill="#345444" font-size="18" font-family="Arial, sans-serif">• 标准知识库问答</text>
+  <text x="122" y="548" fill="#345444" font-size="18" font-family="Arial, sans-serif">• 低成本、快落地</text>
+  <text x="122" y="578" fill="#345444" font-size="18" font-family="Arial, sans-serif">• chunk / embedding / rerank</text>
+
+  <rect x="340" y="392" width="290" height="210" rx="22" fill="#EEF1FA" stroke="#7892BE" stroke-width="2"/>
+  <text x="372" y="438" fill="#243B63" font-size="28" font-family="Arial, sans-serif" font-weight="700">图检索分支</text>
+  <text x="372" y="474" fill="#44608B" font-size="18" font-family="Arial, sans-serif">Graph-first retrieval</text>
+  <text x="372" y="518" fill="#355075" font-size="18" font-family="Arial, sans-serif">• 实体关系与社区摘要</text>
+  <text x="372" y="548" fill="#355075" font-size="18" font-family="Arial, sans-serif">• 全局主题理解</text>
+  <text x="372" y="578" fill="#355075" font-size="18" font-family="Arial, sans-serif">• GraphRAG / LightRAG</text>
+
+  <rect x="590" y="392" width="290" height="210" rx="22" fill="#FBF0E7" stroke="#C08C57" stroke-width="2"/>
+  <text x="622" y="438" fill="#654221" font-size="28" font-family="Arial, sans-serif" font-weight="700">Agentic RAG 分支</text>
+  <text x="622" y="474" fill="#8D6236" font-size="18" font-family="Arial, sans-serif">Planning and iterative retrieval</text>
+  <text x="622" y="518" fill="#744F2A" font-size="18" font-family="Arial, sans-serif">• 任务分解与多轮检索</text>
+  <text x="622" y="548" fill="#744F2A" font-size="18" font-family="Arial, sans-serif">• 检索-推理协同</text>
+  <text x="622" y="578" fill="#744F2A" font-size="18" font-family="Arial, sans-serif">• Think-on-RAG 类路线</text>
+
+  <rect x="840" y="392" width="270" height="210" rx="22" fill="#F5ECFA" stroke="#9B7DBD" stroke-width="2"/>
+  <text x="872" y="438" fill="#53336E" font-size="28" font-family="Arial, sans-serif" font-weight="700">Auto 选路分支</text>
+  <text x="872" y="474" fill="#70508F" font-size="18" font-family="Arial, sans-serif">Auto routing / selection</text>
+  <text x="872" y="518" fill="#62417F" font-size="18" font-family="Arial, sans-serif">• 先理解问题再选路径</text>
+  <text x="872" y="548" fill="#62417F" font-size="18" font-family="Arial, sans-serif">• vector / graph / agentic 切换</text>
+  <text x="872" y="578" fill="#62417F" font-size="18" font-family="Arial, sans-serif">• 混合模式与 fallback</text>
+
+  <line x1="235" y1="602" x2="235" y2="642" stroke="#A6B4A8" stroke-width="3"/>
+  <line x1="485" y1="602" x2="485" y2="642" stroke="#A6B4A8" stroke-width="3"/>
+  <line x1="735" y1="602" x2="735" y2="642" stroke="#A6B4A8" stroke-width="3"/>
+  <line x1="975" y1="602" x2="975" y2="642" stroke="#A6B4A8" stroke-width="3"/>
+  <line x1="235" y1="642" x2="975" y2="642" stroke="#A6B4A8" stroke-width="3"/>
+
+  <rect x="322" y="628" width="554" height="58" rx="18" fill="#E9EEF0" stroke="#AEB9BD" stroke-width="2"/>
+  <text x="383" y="664" fill="#304149" font-size="22" font-family="Arial, sans-serif" font-weight="700">未来主线：多分支并存 + 自动路由 + 证据融合</text>
 </svg>
